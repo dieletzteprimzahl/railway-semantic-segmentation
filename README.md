@@ -43,4 +43,4 @@ Python · TensorFlow · Keras · OpenCV · Google Colab
 
 Each image shows: **Testing Image | Testing Label | Prediction on Test Image**
 
-![Prediction Sample 1](results/predictions/prediction_sample_1.png)
+![Prediction Sample 1](results/predictions/prediction_sample_4.png)
