@@ -1,0 +1,12 @@
+tensorflow>=2.6.0
+keras>=2.6.0
+segmentation-models
+opencv-python
+patchify
+split-folders
+focal-loss
+numpy
+matplotlib
+Pillow
+scikit-learn
+tifffile
