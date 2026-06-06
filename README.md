@@ -15,6 +15,8 @@ switches, signals, platforms, and obstacles at pixel level.
 
 ## Architecture
 
+![Architecture](docs/architecture.svg)
+
 - **Encoder**: ResNet34 (pretrained on ImageNet)
 - **Decoder**: U-Net with skip connections
 - **Loss Function**: Focal Loss
