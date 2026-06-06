@@ -1,5 +1,9 @@
 # Railway Semantic Segmentation
 
+![Python](https://img.shields.io/badge/Python-3.7-blue)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 Semantic segmentation of railway scenes using a ResNet34-based U-Net architecture, 
 trained on the RailSem19 dataset.
 
