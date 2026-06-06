@@ -38,3 +38,11 @@ pip install -r requirements.txt
 ## Tech Stack
 
 Python · TensorFlow · Keras · OpenCV · Google Colab
+
+## Predictions
+
+| Testing Image | Ground Truth | Model Prediction |
+|:---:|:---:|:---:|
+| ![](results/predictions/prediction_sample_1.png) | | |
+
+See [results/predictions/](results/predictions/) for more examples.
