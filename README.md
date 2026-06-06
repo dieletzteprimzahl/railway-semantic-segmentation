@@ -41,7 +41,9 @@ Python · TensorFlow · Keras · OpenCV · Google Colab
 
 ## Predictions
 
-Each row shows: **Testing Image | Ground Truth | Model Prediction**
+Each row shows: **Testing Image | Testing Label | Prediction on Test Image**
 
-![Sample 1](results/predictions/prediction_sample_1.png)
-![Sample 2](results/predictions/prediction_sample_2.png)
+![Prediction Sample 1](results/predictions/prediction_sample_1.png)
+![Prediction Sample 2](results/predictions/prediction_sample_2.png)
+![Prediction Sample 3](results/predictions/prediction_sample_3.png)
+![Prediction Sample 4](results/predictions/prediction_sample_4.png)
