@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <marker id="skip" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="560" fill="#0d1117"/>
+
+  <!-- Title -->
+  <text x="480" y="40" text-anchor="middle" fill="#e6edf3" font-size="22" font-weight="700">Railway Semantic Segmentation</text>
+  <text x="480" y="64" text-anchor="middle" fill="#8b949e" font-size="14">ResNet34 Encoder + U-Net Decoder with Skip Connections</text>
+
+  <!-- Input -->
+  <rect x="40" y="250" width="90" height="60" rx="6" fill="#1f6feb"/>
+  <text x="85" y="276" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Input</text>
+  <text x="85" y="293" text-anchor="middle" fill="#cdd9e5" font-size="10">768x768x3</text>
+
+  <!-- ENCODER label -->
+  <text x="290" y="120" text-anchor="middle" fill="#58a6ff" font-size="13" font-weight="700">ENCODER (ResNet34, ImageNet pretrained)</text>
+
+  <!-- Encoder blocks (downsampling) -->
+  <!-- E1 -->
+  <rect x="180" y="150" width="100" height="48" rx="6" fill="#238636"/>
+  <text x="230" y="170" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Conv Block 1</text>
+  <text x="230" y="186" text-anchor="middle" fill="#d2f4d2" font-size="9">384x384</text>
+  <!-- E2 -->
+  <rect x="180" y="218" width="100" height="48" rx="6" fill="#2ea043"/>
+  <text x="230" y="238" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Conv Block 2</text>
+  <text x="230" y="254" text-anchor="middle" fill="#d2f4d2" font-size="9">192x192</text>
+  <!-- E3 -->
+  <rect x="180" y="286" width="100" height="48" rx="6" fill="#3fb950"/>
+  <text x="230" y="306" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Conv Block 3</text>
+  <text x="230" y="322" text-anchor="middle" fill="#08210d" font-size="9">96x96</text>
+  <!-- E4 -->
+  <rect x="180" y="354" width="100" height="48" rx="6" fill="#56d364"/>
+  <text x="230" y="374" text-anchor="middle" fill="#08210d" font-size="11" font-weight="600">Conv Block 4</text>
+  <text x="230" y="390" text-anchor="middle" fill="#08210d" font-size="9">48x48</text>
+
+  <!-- Bottleneck -->
+  <rect x="410" y="430" width="140" height="56" rx="6" fill="#8957e5"/>
+  <text x="480" y="454" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Bottleneck</text>
+  <text x="480" y="470" text-anchor="middle" fill="#e6d9ff" font-size="9">24x24 (feature maps)</text>
+
+  <!-- DECODER label -->
+  <text x="680" y="120" text-anchor="middle" fill="#f0883e" font-size="13" font-weight="700">DECODER (U-Net upsampling)</text>
+
+  <!-- Decoder blocks (upsampling) -->
+  <!-- D4 -->
+  <rect x="680" y="354" width="100" height="48" rx="6" fill="#bc8cff"/>
+  <text x="730" y="374" text-anchor="middle" fill="#1a0e33" font-size="11" font-weight="600">Up Block 4</text>
+  <text x="730" y="390" text-anchor="middle" fill="#1a0e33" font-size="9">48x48</text>
+  <!-- D3 -->
+  <rect x="680" y="286" width="100" height="48" rx="6" fill="#a371f7"/>
+  <text x="730" y="306" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Up Block 3</text>
+  <text x="730" y="322" text-anchor="middle" fill="#ede4ff" font-size="9">96x96</text>
+  <!-- D2 -->
+  <rect x="680" y="218" width="100" height="48" rx="6" fill="#8957e5"/>
+  <text x="730" y="238" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Up Block 2</text>
+  <text x="730" y="254" text-anchor="middle" fill="#ede4ff" font-size="9">192x192</text>
+  <!-- D1 -->
+  <rect x="680" y="150" width="100" height="48" rx="6" fill="#6e40c9"/>
+  <text x="730" y="170" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Up Block 1</text>
+  <text x="730" y="186" text-anchor="middle" fill="#ede4ff" font-size="9">384x384</text>
+
+  <!-- Output -->
+  <rect x="830" y="250" width="90" height="60" rx="6" fill="#da3633"/>
+  <text x="875" y="272" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Output</text>
+  <text x="875" y="288" text-anchor="middle" fill="#ffd6d4" font-size="9">Segmentation</text>
+  <text x="875" y="301" text-anchor="middle" fill="#ffd6d4" font-size="9">Mask (softmax)</text>
+
+  <!-- Main flow arrows: input -> encoder -->
+  <line x1="130" y1="280" x2="178" y2="180" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- encoder down chain -->
+  <line x1="230" y1="198" x2="230" y2="216" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="230" y1="266" x2="230" y2="284" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="230" y1="334" x2="230" y2="352" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- encoder -> bottleneck -->
+  <line x1="280" y1="392" x2="408" y2="452" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- bottleneck -> decoder -->
+  <line x1="550" y1="452" x2="678" y2="392" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- decoder up chain -->
+  <line x1="730" y1="352" x2="730" y2="334" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="730" y1="284" x2="730" y2="266" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="730" y1="216" x2="730" y2="198" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- decoder -> output -->
+  <line x1="780" y1="180" x2="828" y2="270" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Skip connections (encoder -> decoder, dashed orange) -->
+  <line x1="280" y1="174" x2="678" y2="174" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#skip)"/>
+  <line x1="280" y1="242" x2="678" y2="242" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#skip)"/>
+  <line x1="280" y1="310" x2="678" y2="310" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#skip)"/>
+  <line x1="280" y1="378" x2="678" y2="378" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#skip)"/>
+
+  <!-- Legend -->
+  <line x1="360" y1="520" x2="400" y2="520" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="408" y="524" fill="#8b949e" font-size="11">Forward pass</text>
+  <line x1="520" y1="520" x2="560" y2="520" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#skip)"/>
+  <text x="568" y="524" fill="#8b949e" font-size="11">Skip connection</text>
+</svg>
